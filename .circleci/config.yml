@@ -32,3 +32,14 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit  
+  build-deploy:
+    jobs:
+      - cloudfoundry/push:
+          appname: your-app
+          build_steps:
+            - run: echo 'your build steps'
+            - run: 'echo ''you can have more, too'''
+          manifest: null
+          org: your-org
+          package: null
+          space: your-space
