@@ -3,10 +3,10 @@
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
 orbs:
-  cloudfoundry: circleci/cloudfoundry@0.1.73
+  hello-build: circleci/hello-build@0.0.14
 version: 2.0
 jobs:
-  my-job: some-orb/their-job
+  my-job: hello-build/hello-build
   build-job:
     docker:
       # specify the version you desire here
