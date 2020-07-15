@@ -6,7 +6,8 @@ orbs:
   cloudfoundry: circleci/cloudfoundry@0.1.73
 version: 2.0
 jobs:
-  build:
+  my-job: some-orb/their-job
+  build-job:
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:8-jdk
@@ -32,14 +33,4 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit  
-  build-deploy:
-    jobs:
-      - cloudfoundry/push:
-          appname: your-app
-          build_steps:
-            - run: echo 'your build steps'
-            - run: 'echo ''you can have more, too'''
-          manifest: null
-          org: your-org
-          package: null
-          space: your-space
+
