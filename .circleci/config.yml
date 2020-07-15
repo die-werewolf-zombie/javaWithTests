@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - checkout
-
+      - run: echo "This is pipeline ID << pipeline.id >>"
       - run: mvn test
 
       - run:
